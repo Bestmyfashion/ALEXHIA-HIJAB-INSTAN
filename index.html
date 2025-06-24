@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALEXHIA HIJAB INSTAN - Praktis & Stylish dalam Sekejap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .bg-primary {
+            background-color: #F8E8EE;
+        }
+        .text-primary {
+            color: #D14D72;
+        }
+        .border-primary {
+            border-color: #D14D72;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #F8E8EE 0%, #FEF2F4 100%);
+        }
+        .product-shadow {
+            box-shadow: 0 10px 30px rgba(209, 77, 114, 0.2);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .modal {
+            transition: all 0.3s ease;
+        }
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .notification {
+            animation: slideIn 0.5s forwards, slideOut 0.5s forwards 2.5s;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        @keyframes slideOut {
+            from { transform: translateY(0); }
+            to { transform: translateY(100%); }
+        }
+        .swiper-slide {
+            transition: all 0.3s ease;
+        }
+        .swiper-slide:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Notification Popup -->
+    <div id="notification" class="notification fixed bottom-0 left-0 right-0 bg-white shadow-lg rounded-t-lg mx-auto max-w-md z-50 hidden">
+        <div class="flex items-center p-4 border-b border-gray-200">
+            <div class="flex-shrink-0">
+                <img id="notif-photo" class="h-10 w-10 rounded-full object-cover" src="https://randomuser.me/api/portraits/women/1.jpg" alt="">
+            </div>
+            <div class="ml-3 flex-1">
+                <p class="text-sm font-medium text-gray-900">
+                    <span id="notif-name">Siti</span> dari <span id="notif-city">Jakarta</span>
+                </p>
+                <p class="text-sm text-gray-500">Baru saja memesan ALEXHIA HIJAB INSTAN</p>
+            </div>
+            <button onclick="closeNotification()" class="text-gray-400 hover:text-gray-500">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="gradient-bg sticky top-0 z-40 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-xl font-bold text-primary">Best Myfashion.my.id</h1>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#features" class="text-gray-700 hover:text-primary font-medium">Keunggulan</a>
+                <a href="#gallery" class="text-gray-700 hover:text-primary font-medium">Galeri</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-primary font-medium">Testimoni</a>
+                <a href="#faq" class="text-gray-700 hover:text-primary font-medium">FAQ</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <a href="#features" class="block py-2 text-gray-700 hover:text-primary">Keunggulan</a>
+            <a href="#gallery" class="block py-2 text-gray-700 hover:text-primary">Galeri</a>
+            <a href="#testimonials" class="block py-2 text-gray-700 hover:text-primary">Testimoni</a>
+            <a href="#faq" class="block py-2 text-gray-700 hover:text-primary">FAQ</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg py-12 md:py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-3xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
+                    ALEXHIA HIJAB INSTAN <br>
+                    <span class="text-primary">Praktis & Stylish dalam Sekejap</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-6">
+                    Tidak perlu ribet pasang hijab lagi! Dengan ALEXHIA HIJAB INSTAN, Anda bisa tampil anggun dan modis hanya dalam hitungan detik.
+                </p>
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <div class="bg-white rounded-lg px-4 py-2 shadow-sm flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <span class="text-sm">100% Original</span>
+                    </div>
+                    <div class="bg-white rounded-lg px-4 py-2 shadow-sm flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <span class="text-sm">Bahan Premium</span>
+                    </div>
+                    <div class="bg-white rounded-lg px-4 py-2 shadow-sm flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <span class="text-sm">Garansi Kepuasan</span>
+                    </div>
+                </div>
+                <div class="flex items-center mb-6">
+                    <div class="mr-4">
+                        <p class="text-sm text-gray-500">Harga Normal</p>
+                        <p class="text-xl line-through text-gray-500">Rp 217.500</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-primary font-medium">Harga Promo</p>
+                        <p class="text-3xl font-bold text-primary">Rp 145.000</p>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <div class="flex justify-between text-sm mb-1">
+                        <span>Stok Tersisa:</span>
+                        <span id="stock-counter">17</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div class="bg-primary h-2.5 rounded-full" style="width: 30%"></div>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="#order" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300 shadow-lg">
+                        <i class="fas fa-shopping-cart mr-2"></i> BELI SEKARANG
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=081249315109&text=Halo%2C%20saya%20menginginkan%20ALEXHIA%20HIJAB%20INSTAN" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300 shadow-lg">
+                        <i class="fab fa-whatsapp mr-2"></i> CHAT KAMI
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://cdn.orderonline.id/uploads/images_8493151750776640495.png" alt="ALEXHIA HIJAB INSTAN" class="product-shadow rounded-lg max-w-md w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Solution Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Masalah Hijab Biasa vs Solusi ALEXHIA</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-red-400">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Masalah dengan Hijab Biasa</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-400 mt-1 mr-2"></i>
+                            <span>Ribet saat dipasang, butuh waktu lama</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-400 mt-1 mr-2"></i>
+                            <span>Mudah lepas saat beraktivitas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-400 mt-1 mr-2"></i>
+                            <span>Bahan panas dan tidak nyaman</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-400 mt-1 mr-2"></i>
+                            <span>Bentuk tidak konsisten setiap dipakai</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-green-400">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Solusi ALEXHIA HIJAB INSTAN</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span>Praktis, bisa dipakai dalam 10 detik</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span>Desain anti lepas, tetap rapi seharian</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span>Bahan premium adem dan nyaman</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span>Bentuk sempurna setiap kali dipakai</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Keunggulan ALEXHIA HIJAB INSTAN</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Didesain khusus untuk memberikan kenyamanan maksimal dengan gaya yang selalu on point</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center">
+                    <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-stopwatch text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Praktis & Cepat</h3>
+                    <p class="text-gray-600">Pakai hanya dalam 10 detik tanpa perlu alat tambahan. Solusi sempurna untuk wanita sibuk.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center">
+                    <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-fan text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Bahan Berkualitas</h3>
+                    <p class="text-gray-600">Terbuat dari katun premium yang adem, menyerap keringat, dan tidak mudah kusut.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center">
+                    <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lock text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Anti Lepas</h3>
+                    <p class="text-gray-600">Desain khusus dengan kancing premium yang menjamin hijab tetap rapi sepanjang hari.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center">
+                    <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-ruler-combined text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Adjustable</h3>
+                    <p class="text-gray-600">Dapat disesuaikan dengan bentuk wajah berbagai ukuran untuk hasil yang sempurna.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center">
+                    <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-palette text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Warna Trendi</h3>
+                    <p class="text-gray-600">Tersedia dalam berbagai pilihan warna yang stylish dan mudah dipadankan dengan outfit.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center">
+                    <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-medal text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Garansi 100%</h3>
+                    <p class="text-gray-600">Kami jamin kepuasan Anda atau uang kembali. Tanpa risiko, tanpa penyesalan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Galeri Produk</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Lihat keindahan dan detail ALEXHIA HIJAB INSTAN dari berbagai angle</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://cdn.orderonline.id/uploads/images_5130041750776641918.png" alt="ALEXHIA HIJAB INSTAN" class="w-full h-auto rounded-lg object-cover hover:opacity-90 transition duration-300">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://cdn.orderonline.id/uploads/images_5539001750775995993.png" alt="ALEXHIA HIJAB INSTAN" class="w-full h-auto rounded-lg object-cover hover:opacity-90 transition duration-300">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://cdn.orderonline.id/uploads/images_4842191750775995886.png" alt="ALEXHIA HIJAB INSTAN" class="w-full h-auto rounded-lg object-cover hover:opacity-90 transition duration-300">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98p-lxvyzhovbp5qd0.webp" alt="ALEXHIA HIJAB INSTAN" class="w-full h-auto rounded-lg object-cover hover:opacity-90 transition duration-300">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://albatahijab.com/wp-content/uploads/2021/06/Jahitan-dagu-dapat-disesuaikan-ukuran-wajah.jpg" alt="ALEXHIA HIJAB INSTAN" class="w-full h-auto rounded-lg object-cover hover:opacity-90 transition duration-300">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://cdn.orderonline.id/uploads/images_5903821750776643595.png" alt="ALEXHIA HIJAB INSTAN" class="w-full h-auto rounded-lg object-cover hover:opacity-90 transition duration-300">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://cdn.orderonline.id/uploads/images_4459551750776957679.png" alt="ALEXHIA HIJAB INSTAN" class="w-full h-auto rounded-lg object-cover hover:opacity-90 transition duration-300">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://albatahijab.com/wp-content/uploads/2025/05/Testimoni-6.jpg" alt="ALEXHIA HIJAB INSTAN" class="w-full h-auto rounded-lg object-cover hover:opacity-90 transition duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 opacity-0 invisible transition duration-300">
+        <div class="relative max-w-4xl w-full mx-4">
+            <button onclick="closeModal()" class="absolute -top-10 right-0 text-white text-3xl hover:text-gray-300">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modal-image" src="" alt="" class="w-full h-auto max-h-screen rounded-lg">
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Apa Kata Mereka?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Ribuan wanita Indonesia sudah merasakan kemudahan ALEXHIA HIJAB INSTAN</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial cards removed -->
+            </div>
+            <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <img src="https://albatahijab.com/wp-content/uploads/2025/05/Testimoni-6.jpg" alt="Testimoni" class="w-full h-auto rounded">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <img src="https://albatahijab.com/wp-content/uploads/2025/05/Testimoni-5.jpg" alt="Testimoni" class="w-full h-auto rounded">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <img src="https://albatahijab.com/wp-content/uploads/2025/05/Testimoni-4.jpg" alt="Testimoni" class="w-full h-auto rounded">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <img src="https://albatahijab.com/wp-content/uploads/2025/05/Testimoni-3.jpg" alt="Testimoni" class="w-full h-auto rounded">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <img src="https://albatahijab.com/wp-content/uploads/2025/05/Testimoni-2.jpg" alt="Testimoni" class="w-full h-auto rounded">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <img src="https://cdn.orderonline.id/uploads/images_4459551750776957679.png" alt="Testimoni" class="w-full h-auto rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown & Order Section -->
+    <section id="order" class="py-12 bg-pink-500 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold mb-4">PROMO SPESIAL HARI INI!</h2>
+                <p class="text-lg max-w-2xl mx-auto">Dapatkan diskon 33% hanya untuk 100 pembeli pertama hari ini</p>
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div class="text-center">
+                    <div class="text-2xl font-semibold mb-2">WAKTU PROMO:</div>
+                    <div id="countdown" class="flex justify-center gap-2 text-2xl font-bold">
+                        <div class="bg-white text-primary rounded-lg px-3 py-2 w-16">
+                            <span id="hours">05</span>
+                        </div>
+                        <span>:</span>
+                        <div class="bg-white text-primary rounded-lg px-3 py-2 w-16">
+                            <span id="minutes">23</span>
+                        </div>
+                        <span>:</span>
+                        <div class="bg-white text-primary rounded-lg px-3 py-2 w-16">
+                            <span id="seconds">47</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-semibold mb-2">STOK TERSISA:</div>
+                    <div class="text-4xl font-bold">
+                        <span id="stock-counter-2">17</span>/100
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-2xl mx-auto mt-12 bg-white rounded-lg p-6 shadow-lg">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="md:w-1/3">
+                        <img src="https://cdn.orderonline.id/uploads/images_8493151750776640495.png" alt="ALEXHIA HIJAB INSTAN" class="w-full h-auto rounded-lg">
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">ALEXHIA HIJAB INSTAN</h3>
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400 text-sm mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm">4.7 (1.234 ulasan)</span>
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-gray-500 line-through text-lg">Rp 217.500</span>
+                            <span class="text-primary font-bold text-3xl ml-2">Rp 145.000</span>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-gray-600">Stok Tersisa:</span>
+                                <span id="stock-counter-3" class="font-semibold">17</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-primary h-2.5 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="https://alya.orderonline.id/alexhia-hijab-instan" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300 shadow-lg">
+                                <i class="fas fa-shopping-cart mr-2"></i> BELI SEKARANG
+                            </a>
+                            <a href="https://api.whatsapp.com/send?phone=081249315109&text=Halo%2C%20saya%20menginginkan%20ALEXHIA%20HIJAB%20INSTAN" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300 shadow-lg">
+                                <i class="fab fa-whatsapp mr-2"></i> CHAT KAMI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Pertanyaan yang Sering Diajukan</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Temukan jawaban atas pertanyaan Anda tentang ALEXHIA HIJAB INSTAN</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-semibold text-gray-800 hover:text-primary focus:outline-none">
+                        <span>Apakah ALEXHIA HIJAB INSTAN nyaman dipakai seharian?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 hidden">
+                        <p>Sangat nyaman! Kami menggunakan bahan katun premium berkualitas tinggi yang adem, menyerap keringat, dan ringan. Banyak pelanggan kami memakainya dari pagi hingga malam tanpa merasa gerah atau tidak nyaman.</p>
+                    </div>
+                </div>
+                <div class="mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-semibold text-gray-800 hover:text-primary focus:outline-none">
+                        <span>Bagaimana cara perawatannya?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 hidden">
+                        <p>Perawatan sangat mudah:
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>Cuci dengan tangan menggunakan deterjen lembut</li>
+                                <li>Jangan direndam terlalu lama</li>
+                                <li>Jemur di tempat teduh</li>
+                                <li>Setrika dengan suhu rendah</li>
+                            </ul>
+                            Dengan perawatan yang tepat, hijab Anda akan tetap awet dan nyaman dipakai.
+                        </p>
+                    </div>
+                </div>
+                <div class="mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-semibold text-gray-800 hover:text-primary focus:outline-none">
+                        <span>Apakah tersedia berbagai ukuran?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 hidden">
+                        <p>ALEXHIA HIJAB INSTAN didesain dengan sistem adjustable yang bisa disesuaikan dengan berbagai bentuk wajah. Kami memiliki satu ukuran universal yang cocok untuk kebanyakan wanita Indonesia, dengan pengait yang bisa diatur ketatnya sesuai kebutuhan.</p>
+                    </div>
+                </div>
+                <div class="mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-semibold text-gray-800 hover:text-primary focus:outline-none">
+                        <span>Bagaimana jika produk tidak sesuai ekspektasi?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 hidden">
+                        <p>Kami memberikan garansi kepuasan 100%. Jika Anda tidak puas dengan produk kami dalam 7 hari setelah penerimaan, Anda bisa mengembalikannya dan kami akan mengembalikan uang Anda tanpa pertanyaan. Namun, kami yakin Anda akan sangat puas dengan kualitas ALEXHIA HIJAB INSTAN.</p>
+                    </div>
+                </div>
+                <div class="mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-semibold text-gray-800 hover:text-primary focus:outline-none">
+                        <span>Berapa lama pengiriman biasanya?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 hidden">
+                        <p>Kami melakukan pengiriman setiap hari kerja. Waktu pengiriman bervariasi tergantung lokasi:
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>Jabodetabek: 1-2 hari kerja</li>
+                                <li>Pulau Jawa: 2-3 hari kerja</li>
+                                <li>Luar Jawa: 3-5 hari kerja</li>
+                            </ul>
+                            Anda akan menerima nomor resi yang bisa dilacak setelah pakai dikirim.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">ALEXHIA HIJAB INSTAN</h3>
+                    <p class="text-gray-400">Solusi praktis berhijab untuk wanita modern. Stylish, nyaman, dan mudah dipakai dalam hitungan detik.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition">Keunggulan</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition">Galeri</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimoni</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Kontak Kami</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">0812-4931-5109</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-whatsapp mr-2 text-gray-400"></i>
+                            <a href="https://api.whatsapp.com/send?phone=081249315109&text=Halo%2C%20saya%20menginginkan%20ALEXHIA%20HIJAB%20INSTAN" class="text-gray-400 hover:text-white transition">WhatsApp</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">cs@alexhiahijab.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 ALEXHIA HIJAB INSTAN. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://api.whatsapp.com/send?phone=081249315109&text=Halo%2C%20saya%20menginginkan%20ALEXHIA%20HIJAB%20INSTAN" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition duration-300 z-40">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+
+        // Gallery Modal
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-image');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const imgSrc = this.querySelector('img').src;
+                modalImg.src = imgSrc;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59, 999);
+            
+            const diff = endOfDay - now;
+            
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Stock Counter
+        function updateStock() {
+            const stock = Math.max(0, Math.floor(Math.random() * 20));
+            document.getElementById('stock-counter').textContent = stock;
+            document.getElementById('stock-counter-2').textContent = stock;
+            document.getElementById('stock-counter-3').textContent = stock;
+            
+            const progress = (stock / 100) * 100;
+            document.querySelectorAll('.bg-primary.h-2.5').forEach(el => {
+                el.style.width = `${progress}%`;
+            });
+        }
+        
+        setInterval(updateStock, 30000);
+        updateStock();
+
+        // Fake Order Notification
+        const cities = ['Jakarta', 'Bandung', 'Surabaya', 'Medan', 'Makassar', 'Semarang', 'Palembang', 'Balikpapan'];
+        const names = ['Siti', 'Dewi', 'Rina', 'Ani', 'Lina', 'Maya', 'Dina', 'Nina'];
+        
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            const name = names[Math.floor(Math.random() * names.length)];
+            const city = cities[Math.floor(Math.random() * cities.length)];
+            const photoId = Math.floor(Math.random() * 50) + 1;
+            
+            document.getElementById('notif-name').textContent = name;
+            document.getElementById('notif-city').textContent = city;
+            document.getElementById('notif-photo').src = `https://randomuser.me/api/portraits/women/${photoId}.jpg`;
+            
+            notification.classList.remove('hidden');
+            
+            setTimeout(() => {
+                notification.classList.add('hidden');
+            }, 3000);
+        }
+        
+        function closeNotification() {
+            document.getElementById('notification').classList.add('hidden');
+        }
+        
+        // Show first notification after 3 seconds
+        setTimeout(showNotification, 3000);
+        
+        // Then show every 10-20 seconds
+        setInterval(showNotification, Math.random() * 10000 + 10000);
+
+        // View Counter
+        function updateViewCounter() {
+            const views = Math.floor(Math.random() * 1000) + 500;
+            document.getElementById('view-counter').textContent = views.toLocaleString();
+        }
+        
+        setInterval(updateViewCounter, 5000);
+        updateViewCounter();
+    </script>
+</body>
+</html>
